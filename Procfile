@@ -1,1 +1,1 @@
-web: currency
+web: dev-challenge-my-unsplash
