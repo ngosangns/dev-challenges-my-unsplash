@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"os"
 
@@ -12,12 +11,11 @@ import (
 )
 
 func main() {
-	// Get port
-	port := os.Getenv("PORT")
-	// port := "80"
-	if port == "" {
-		log.Fatal("$PORT must be set")
-	}
+	// Set environment variables
+	// os.Setenv("PORT", "80")
+	// os.Setenv("DB_CONNECT_STRING", "mongodb://localhost:27017")
+	// os.Setenv("DB_NAME", "admin")
+	// os.Setenv("DB_COLLECTION", "my-unsplash")
 
 	// Echo instance
 	e := echo.New()
@@ -41,5 +39,5 @@ func main() {
 	e.POST("/create", handler.Create)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":" + port))
+	e.Logger.Fatal(e.Start(":" + os.Getenv("PORT")))
 }

@@ -2,18 +2,20 @@ package database
 
 import (
 	"context"
+	"os"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-const DB_HOST string = "mongodb://localhost:27017"
-const DB_NAME string = "admin"
-const DB_COLLECTION string = "my-unsplash"
+var DB_NAME string = os.Getenv("DB_NAME")
+var DB_COLLECTION string = os.Getenv("DB_COLLECTION")
+var DB_CONNECT_STRING string = os.Getenv("DB_CONNECT_STRING")
 
 func Connect() (*mongo.Client, context.CancelFunc, error) {
-	client, err := mongo.NewClient(options.Client().ApplyURI(DB_HOST))
+	// Connect
+	client, err := mongo.NewClient(options.Client().ApplyURI(DB_CONNECT_STRING))
 	if err != nil {
 		return nil, nil, err
 	}
