@@ -11,11 +11,8 @@ import (
 )
 
 func main() {
-	// Set environment variables
-	// os.Setenv("PORT", "80")
-	// os.Setenv("DB_CONNECT_STRING", "mongodb://localhost:27017")
-	// os.Setenv("DB_NAME", "admin")
-	// os.Setenv("DB_COLLECTION", "my-unsplash")
+	// First of all: Set environment varriables in setenv.cmd
+	// Restart IDE after update environment varriables
 
 	// Echo instance
 	e := echo.New()
@@ -39,5 +36,5 @@ func main() {
 	e.POST("/create", handler.Create)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":" + os.Getenv("PORT")))
+	e.Logger.Fatal(e.Start(":" + os.Getenv("GO_PORT")))
 }

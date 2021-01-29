@@ -9,9 +9,9 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var DB_NAME string = os.Getenv("DB_NAME")
-var DB_COLLECTION string = os.Getenv("DB_COLLECTION")
-var DB_CONNECT_STRING string = os.Getenv("DB_CONNECT_STRING")
+var DB_NAME string = os.Getenv("GO_DB_NAME")
+var DB_COLLECTION string = os.Getenv("GO_DB_COLLECTION")
+var DB_CONNECT_STRING string = os.Getenv("GO_DB_CONNECT_STRING")
 
 func Connect() (*mongo.Client, context.CancelFunc, error) {
 	// Connect

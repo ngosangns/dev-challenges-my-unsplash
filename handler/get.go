@@ -19,6 +19,7 @@ func Get(c echo.Context) error {
 	// Connect database
 	client, cancel, err := database.Connect()
 	if err != nil {
+		log.Fatal(err)
 		return err
 	}
 	defer cancel()
