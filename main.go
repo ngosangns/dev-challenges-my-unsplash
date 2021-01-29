@@ -36,5 +36,5 @@ func main() {
 	e.POST("/create", handler.Create)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":" + os.Getenv("GO_PORT")))
+	e.Logger.Fatal(e.Start(":" + os.Getenv("PORT")))
 }
