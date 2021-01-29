@@ -104,7 +104,8 @@ export default {
     getData: function() {
       // Open loading
       const loading = this.$vs.loading({
-        target: document.getElementById("masonry")
+        target: document.getElementById("masonry"),
+        background: "transparent",
       })
       // Get data
       axios({
@@ -139,7 +140,8 @@ export default {
 
       // Open loading
       const loading = this.$vs.loading({
-        target: document.getElementById("masonry")
+        target: document.getElementById("masonry"),
+        background: "transparent",
       })
       // Search request
       axios({
@@ -193,9 +195,10 @@ export default {
 
 #main {
   position: relative;
+  margin: auto;
   margin-top: 1rem;
   width: 96vw;
-  margin: auto;
+  min-height: 80vh;
   #search-results-title {
 
     h5 {
