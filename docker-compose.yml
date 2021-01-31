@@ -8,6 +8,8 @@ services:
       context: .
     ports:
       - "8080:8080"
+    env_file:
+    - docker-env.list
   # db:
   #   image: mongo
   #   container_name: mongo_db
