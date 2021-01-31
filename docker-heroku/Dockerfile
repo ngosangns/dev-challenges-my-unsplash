@@ -5,4 +5,4 @@ WORKDIR /go/src/app
 
 COPY . .
 
-ENTRYPOINT go build -o app; ./app
+CMD go build -o app; ./app
