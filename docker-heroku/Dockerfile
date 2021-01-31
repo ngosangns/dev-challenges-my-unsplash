@@ -1,7 +1,8 @@
 FROM golang:alpine
 
 RUN mkdir /go/src/app
-COPY . /go/src/app
+
+COPY .. /go/src/app
 
 WORKDIR /go/src/app
 
