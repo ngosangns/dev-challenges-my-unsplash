@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  app:
+    image: my-unsplash
+    container_name: my-unsplash
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+  # db:
+  #   image: mongo
+  #   container_name: mongo_db
+  #   ports:
+  #     - "27017:27017"
