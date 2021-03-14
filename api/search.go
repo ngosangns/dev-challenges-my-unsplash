@@ -32,7 +32,7 @@ func Search(w http.ResponseWriter, r *http.Request) {
 
 	// Get records by query
 	results := make([]*map[string]interface{}, 0)
-	q := client.Collection(flags.DbCollection.Get()).Where("label", "==", query)
+	q := client.Collection(flags.DbCollection.Get()).Where("label", ">=", query).Where("label", ">=", query+"\uf8ff")
 	docs := q.Documents(ctx)
 
 	for {
