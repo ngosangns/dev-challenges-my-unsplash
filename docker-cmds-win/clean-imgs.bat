@@ -1,1 +1,0 @@
-docker image prune --filter="dangling=true" -f
